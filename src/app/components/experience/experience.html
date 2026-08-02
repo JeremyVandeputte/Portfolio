@@ -1,0 +1,64 @@
+<section id="experience" class="section experience" appFadeInOnScroll>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">{{ 'experience.title' | translate }}</h2>
+    </div>
+
+    <div class="experience__group">
+      <h3 class="experience__group-title">{{ 'experience.subtitleProfessional' | translate }}</h3>
+      <ol class="timeline">
+        @for (item of experiences; track item.id) {
+          <li class="timeline__item">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <p class="timeline__period">
+                {{ formatMonth(item.startDate) }} —
+                @if (item.endDate) {
+                  {{ formatMonth(item.endDate) }}
+                } @else {
+                  {{ 'experience.present' | translate }}
+                }
+              </p>
+              <h4 class="timeline__title">{{ item.titleKey | translate }}</h4>
+              <p class="timeline__org">{{ item.organization }}@if (item.location) {, {{ item.location }}}</p>
+              <p class="timeline__description">{{ item.descriptionKey | translate }}</p>
+              @if (item.technologies.length) {
+                <div class="timeline__tags">
+                  @for (tech of item.technologies; track tech) {
+                    <span class="tech-tag">{{ tech }}</span>
+                  }
+                </div>
+              }
+            </div>
+          </li>
+        }
+      </ol>
+    </div>
+
+    <div class="experience__group">
+      <h3 class="experience__group-title">{{ 'experience.subtitleEducation' | translate }}</h3>
+      <ol class="timeline">
+        @for (item of education; track item.id) {
+          <li class="timeline__item">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <p class="timeline__period">
+                {{ formatMonth(item.startDate) }} —
+                @if (item.endDate) {
+                  {{ formatMonth(item.endDate) }}
+                } @else {
+                  {{ 'experience.present' | translate }}
+                }
+              </p>
+              <h4 class="timeline__title">{{ item.titleKey | translate }}</h4>
+              <p class="timeline__org">{{ item.organization }}</p>
+              @if (item.descriptionKey) {
+                <p class="timeline__description">{{ item.descriptionKey | translate }}</p>
+              }
+            </div>
+          </li>
+        }
+      </ol>
+    </div>
+  </div>
+</section>

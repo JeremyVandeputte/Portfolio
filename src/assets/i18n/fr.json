@@ -1,0 +1,136 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "experience": "Parcours",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "contact": "Contact",
+    "viewCv": "Voir le CV",
+    "backToPortfolio": "Retour au portfolio",
+    "toggleTheme": "Changer de thème",
+    "toggleLang": "Changer de langue",
+    "toggleMenu": "Ouvrir le menu"
+  },
+  "intro": {
+    "greeting": "Bonjour, je suis",
+    "role": "Développeur Python Django — Full-Stack",
+    "tagline": "Je conçois des applications web robustes de bout en bout, du modèle métier à l'interface finale — avec une attention particulière portée à la fiabilité, à la clarté du code et à l'expérience utilisateur.",
+    "ctaProjects": "Découvrir mes projets",
+    "ctaContact": "Me contacter",
+    "scrollHint": "Défiler pour en savoir plus"
+  },
+  "about": {
+    "title": "À propos de ce site",
+    "text1": "Ce site est mon portfolio professionnel : il présente mon parcours, mes compétences et mes projets de façon claire et structurée.",
+    "text2": "Il peut aussi être consulté à tout moment sous la forme d'un CV classique, imprimable et téléchargeable en un clic, grâce au bouton de bascule présent dans la barre de navigation.",
+    "text3": "L'objectif est simple : donner à un recruteur ou une entreprise une vue rapide et fiable de mon profil, sans détour."
+  },
+  "experience": {
+    "title": "Parcours",
+    "subtitleProfessional": "Expérience professionnelle",
+    "subtitleEducation": "Formation",
+    "present": "Aujourd'hui",
+    "uclouvain": {
+      "title": "Développeur Python Django Full-Stack",
+      "description": "Développement et maintenance d'applications web Django (back-end et front-end). Développement de A à Z d'un système d'inscription aux évaluations étudiantes (API et interfaces), organisation des évaluations, octroi de crédits pour l'inscription d'un étudiant, refonte de l'interface du dossier étudiant, génération de 10 PDFs différents (composition du PAE, inscription aux évaluations, PV de délibération, etc.) et scripts de reprise de données. Approche : Domain Driven Design."
+    },
+    "chwapi": {
+      "title": "Stagiaire Développeur",
+      "description": "Développement d'une nouvelle application React Native de suivi des patients pour les médecins traitants."
+    }
+  },
+  "education": {
+    "englishA1A2": {
+      "title": "Anglais A1-A2"
+    },
+    "ddd": {
+      "title": "Domain Driven Design"
+    },
+    "pythonDjango": {
+      "title": "Formation Python Django"
+    },
+    "bachelorIt": {
+      "title": "Bachelier en Informatique de Gestion",
+      "description": "Diplômé avec distinction."
+    },
+    "cessAgronomy": {
+      "title": "CESS + Qualification agricole",
+      "description": "Option Agronomie."
+    }
+  },
+  "skills": {
+    "title": "Compétences",
+    "categories": {
+      "languages": "Langages",
+      "frameworks": "Frameworks",
+      "databases": "Bases de données",
+      "frontend": "Front-end",
+      "tools": "Outils",
+      "concepts": "Concepts",
+      "methodologies": "Méthodologies",
+      "os": "Systèmes d'exploitation",
+      "languagesSpoken": "Langues"
+    },
+    "languagesSpoken": {
+      "french": "Français (langue maternelle)",
+      "english": "Anglais (niveau B1)"
+    }
+  },
+  "projects": {
+    "title": "Projets",
+    "statusOnline": "En ligne",
+    "statusInProgress": "En cours",
+    "technologiesLabel": "Technologies",
+    "learnMore": "En savoir plus",
+    "close": "Fermer",
+    "imagePlaceholder": "Image à venir",
+    "prevImage": "Image précédente",
+    "nextImage": "Image suivante",
+    "elia": {
+      "title": "Prix de déséquilibre électrique (Elia)",
+      "description": "Récupération et visualisation du prix de déséquilibre électrique et de sa prévision via l'API Elia.",
+      "detail": "Description détaillée à venir."
+    },
+    "portfolio": {
+      "title": "Portfolio & CV",
+      "description": "Présentation de mes projets et de mon CV téléchargeable — le site que vous consultez actuellement.",
+      "technique": "Technique : Vibe coding (Claude Code)",
+      "detail": "Description détaillée à venir."
+    },
+    "justgaming": {
+      "title": "JustGaming — Réseau social gaming",
+      "description": "Site réseau social orienté gaming, architecture complète (Domains, Repositories, Use cases), en collaboration avec 3 autres développeurs. Intégration Jenkins : déploiement automatisé, tests unitaires et analyse qualité (Pylint) sur chaque pull request.",
+      "detail": "Description détaillée à venir."
+    },
+    "fsm": {
+      "title": "Outil de gestion d'exploitation agricole (FSM)",
+      "description": "Site de gestion d'exploitation agricole pour jeu de simulation agricole.",
+      "detail": "Description détaillée à venir."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "N'hésitez pas à me contacter directement via l'un des canaux ci-dessous.",
+    "email": "Email",
+    "phone": "Téléphone",
+    "location": "Celles, Belgique",
+    "website": "Site personnel",
+    "githubPersonal": "GitHub personnel",
+    "githubPro": "GitHub professionnel",
+    "linkedin": "LinkedIn"
+  },
+  "cv": {
+    "title": "Curriculum Vitae",
+    "subtitle": "Consultez, téléchargez ou imprimez mon CV au format PDF.",
+    "download": "Télécharger",
+    "print": "Imprimer",
+    "viewMobile": "Voir / Télécharger le CV",
+    "mobileNotice": "Pour une meilleure lisibilité sur mobile, ouvrez le CV directement en plein écran.",
+    "backToPortfolio": "Retour au portfolio"
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "madeWith": "Conçu et développé avec Angular."
+  }
+}

@@ -1,0 +1,46 @@
+.cv-page__header {
+  margin-bottom: var(--space-6);
+}
+
+.cv-page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.cv-page__viewer {
+  padding: var(--space-4);
+  overflow: hidden;
+}
+
+.cv-page__iframe {
+  display: block;
+  width: 100%;
+  height: 80dvh;
+  min-height: 32rem;
+  border: none;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-elevated-2);
+}
+
+.cv-page__mobile-fallback {
+  display: none;
+  padding: var(--space-6);
+  text-align: center;
+}
+
+.cv-page__mobile-fallback p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-5);
+}
+
+@media (max-width: 699px) {
+  .cv-page__viewer {
+    display: none;
+  }
+
+  .cv-page__mobile-fallback {
+    display: block;
+  }
+}

@@ -1,0 +1,22 @@
+<section id="skills" class="section skills" appFadeInOnScroll>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">{{ 'skills.title' | translate }}</h2>
+    </div>
+
+    <div class="skills__grid">
+      @for (category of categories; track category.id) {
+        <div class="skills__category">
+          <h3 class="skills__category-title">{{ category.titleKey | translate }}</h3>
+          <ul class="skills__list">
+            @for (item of category.items; track item.label) {
+              <li class="tech-tag">
+                {{ item.translationKey ? (item.translationKey | translate) : item.label }}
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>

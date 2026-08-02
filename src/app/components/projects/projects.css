@@ -1,0 +1,327 @@
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: var(--space-5);
+}
+
+.project-card {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.project-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.project-card__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.project-card__status {
+  flex-shrink: 0;
+}
+
+.project-card__status--online {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border-color));
+}
+
+.project-card__description {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  margin-bottom: var(--space-3);
+}
+
+.project-card__technique {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: var(--space-3);
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: auto;
+  padding-top: var(--space-3);
+}
+
+.project-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.project-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.85rem;
+  color: var(--accent);
+  word-break: break-all;
+}
+
+.project-card__more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-left: auto;
+  padding: 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  transition: color var(--transition-fast), gap var(--transition-fast);
+}
+
+.project-card__more:hover {
+  color: var(--accent);
+  gap: 0.4rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Detail modal                                                       */
+/* ------------------------------------------------------------------ */
+
+.project-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  /* Without this, inserting the modal into the flow of the (scrolled)
+     projects section can trigger the browser's scroll-anchoring
+     compensation and cause a visible scroll jump right as it opens. */
+  overflow-anchor: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+  background-color: color-mix(in srgb, black 55%, transparent);
+  backdrop-filter: blur(4px);
+  animation: project-modal-fade 0.2s ease;
+}
+
+.project-modal {
+  position: relative;
+  width: 100%;
+  max-width: 44rem;
+  max-height: 90dvh;
+  overflow-y: auto;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  animation: project-modal-in 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-modal:focus {
+  outline: none;
+}
+
+.project-modal:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+@keyframes project-modal-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes project-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}
+
+.project-modal__close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  z-index: 1;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.project-modal__close:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.project-modal__media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--bg-elevated-2);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.project-modal__media-scroller {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.project-modal__media-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.project-modal__media-item {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  /* `contain` rather than `cover`: screenshots are informational content,
+     not artwork — cropping them to fill the box hides real content (and,
+     with wide screenshots, crops enough off the sides that the leftover
+     sliver can look like it's already bleeding into the next slide). */
+  object-fit: contain;
+  scroll-snap-align: start;
+}
+
+.project-modal__media-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background-color: color-mix(in srgb, black 45%, transparent);
+  border: 1px solid color-mix(in srgb, white 25%, transparent);
+  color: white;
+  backdrop-filter: blur(2px);
+  transition: background-color var(--transition-fast), opacity var(--transition-fast);
+}
+
+.project-modal__media-nav:hover {
+  background-color: color-mix(in srgb, black 65%, transparent);
+}
+
+.project-modal__media-nav:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.project-modal__media-nav--prev {
+  left: var(--space-3);
+}
+
+.project-modal__media-nav--next {
+  right: var(--space-3);
+}
+
+.project-modal__media-dots {
+  position: absolute;
+  bottom: var(--space-3);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.55rem;
+  border-radius: 999px;
+  /* A solid backdrop (not just the dots' own color) keeps them visible
+     regardless of what's underneath — a light screenshot would otherwise
+     wash out plain white dots. */
+  background-color: color-mix(in srgb, black 45%, transparent);
+  backdrop-filter: blur(2px);
+}
+
+.project-modal__media-dot {
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background-color: color-mix(in srgb, white 45%, transparent);
+  transition: background-color var(--transition-fast), width var(--transition-fast);
+}
+
+.project-modal__media-dot.is-active {
+  width: 16px;
+  background-color: white;
+}
+
+.project-modal__media-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  color: var(--text-muted);
+  background-color: var(--bg-elevated-2);
+  background-image: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--border-color) 60%, transparent) 0 1px,
+    transparent 1px 12px
+  );
+}
+
+.project-modal__media-placeholder span {
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.project-modal__body {
+  padding: var(--space-6);
+}
+
+.project-modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.project-modal__title {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.project-modal__description {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: var(--space-4);
+}
+
+.project-modal__link {
+  margin-top: var(--space-5);
+}

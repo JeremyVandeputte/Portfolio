@@ -1,0 +1,40 @@
+<section class="section cv-page">
+  <div class="container cv-page__inner">
+    <div class="cv-page__header">
+      <h1 class="section-title">{{ 'cv.title' | translate }}</h1>
+      <p class="section-lead">{{ 'cv.subtitle' | translate }}</p>
+
+      <div class="cv-page__actions">
+        <a class="btn btn-primary" [href]="cvPath" download="CV_Jeremy_Vandeputte.pdf">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 3v12m0 0-4-4m4 4 4-4" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke-linecap="round" />
+          </svg>
+          {{ 'cv.download' | translate }}
+        </a>
+
+        <button class="btn btn-secondary" type="button" (click)="printCv()">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 9V3h12v6" stroke-linecap="round" stroke-linejoin="round" />
+            <rect x="4" y="9" width="16" height="8" rx="1.5" />
+            <path d="M6 15h12v6H6v-6Z" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          {{ 'cv.print' | translate }}
+        </button>
+
+        <a class="btn btn-secondary" [routerLink]="['/']">{{ 'cv.backToPortfolio' | translate }}</a>
+      </div>
+    </div>
+
+    <div class="cv-page__viewer card">
+      <iframe class="cv-page__iframe" src="assets/cv.pdf" title="CV Jérémy Vandeputte"></iframe>
+    </div>
+
+    <div class="cv-page__mobile-fallback card">
+      <p>{{ 'cv.mobileNotice' | translate }}</p>
+      <a class="btn btn-primary" [href]="cvPath" target="_blank" rel="noopener">
+        {{ 'cv.viewMobile' | translate }}
+      </a>
+    </div>
+  </div>
+</section>

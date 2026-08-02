@@ -1,0 +1,178 @@
+<section id="projects" class="section projects" appFadeInOnScroll>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">{{ 'projects.title' | translate }}</h2>
+    </div>
+
+    <div class="projects__grid">
+      @for (project of projects; track project.id) {
+        <article class="card project-card">
+          <div class="project-card__header">
+            <h3 class="project-card__title">{{ project.titleKey | translate }}</h3>
+            <span
+              class="badge project-card__status"
+              [class.project-card__status--online]="project.status === 'online'"
+            >
+              {{ (project.status === 'online' ? 'projects.statusOnline' : 'projects.statusInProgress') | translate }}
+            </span>
+          </div>
+
+          <p class="project-card__description">{{ project.descriptionKey | translate }}</p>
+
+          @if (project.techniqueKey) {
+            <p class="project-card__technique">{{ project.techniqueKey | translate }}</p>
+          }
+
+          @if (project.technologies.length) {
+            <div class="project-card__tags">
+              @for (tech of project.technologies; track tech) {
+                <span class="tech-tag">{{ tech }}</span>
+              }
+            </div>
+          }
+
+          <div class="project-card__footer">
+            @if (project.link) {
+              <a class="project-card__link" [href]="project.link" target="_blank" rel="noopener">
+                {{ project.link }}
+                <svg
+                  viewBox="0 0 24 24"
+                  width="14"
+                  height="14"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+              </a>
+            }
+
+            <button type="button" class="project-card__more" (click)="openDetails(project)">
+              {{ 'projects.learnMore' | translate }}
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m9 6 6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+@if (selectedProject(); as project) {
+    <div class="project-modal-backdrop" (click)="closeDetails()">
+      <div
+        class="project-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="project-modal-title"
+        tabindex="-1"
+        (click)="$event.stopPropagation()"
+      >
+        <button
+          type="button"
+          class="project-modal__close"
+          (click)="closeDetails()"
+          [attr.aria-label]="'projects.close' | translate"
+        >
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 6l12 12M18 6 6 18" stroke-linecap="round" />
+          </svg>
+        </button>
+
+        <div class="project-modal__media">
+          @if (project.images.length) {
+            <div class="project-modal__media-scroller" #mediaScroller (scroll)="onMediaScroll($event)">
+              @for (image of project.images; track image) {
+                <img class="project-modal__media-item" [src]="image" [alt]="project.titleKey | translate" />
+              }
+            </div>
+
+            @if (project.images.length > 1) {
+              <button
+                type="button"
+                class="project-modal__media-nav project-modal__media-nav--prev"
+                (click)="prevImage()"
+                [disabled]="activeImageIndex() === 0"
+                [attr.aria-label]="'projects.prevImage' | translate"
+              >
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="m15 6-6 6 6 6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                class="project-modal__media-nav project-modal__media-nav--next"
+                (click)="nextImage()"
+                [disabled]="activeImageIndex() === project.images.length - 1"
+                [attr.aria-label]="'projects.nextImage' | translate"
+              >
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="m9 6 6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+
+              <div class="project-modal__media-dots">
+                @for (image of project.images; track image; let i = $index) {
+                  <button
+                    type="button"
+                    class="project-modal__media-dot"
+                    [class.is-active]="i === activeImageIndex()"
+                    (click)="goToImage(i)"
+                    [attr.aria-label]="(i + 1) + ' / ' + project.images.length"
+                  ></button>
+                }
+              </div>
+            }
+          } @else {
+            <div class="project-modal__media-placeholder">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4">
+                <rect x="3" y="4" width="18" height="16" rx="2" />
+                <circle cx="9" cy="10" r="1.8" />
+                <path d="m4 17 5-5 4 4 3-3 4 4" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span>{{ 'projects.imagePlaceholder' | translate }}</span>
+            </div>
+          }
+        </div>
+
+        <div class="project-modal__body">
+          <div class="project-modal__header">
+            <h3 id="project-modal-title" class="project-modal__title">{{ project.titleKey | translate }}</h3>
+            <span
+              class="badge project-card__status"
+              [class.project-card__status--online]="project.status === 'online'"
+            >
+              {{ (project.status === 'online' ? 'projects.statusOnline' : 'projects.statusInProgress') | translate }}
+            </span>
+          </div>
+
+          @if (project.techniqueKey) {
+            <p class="project-card__technique">{{ project.techniqueKey | translate }}</p>
+          }
+
+          <p class="project-modal__description">{{ project.detailDescriptionKey | translate }}</p>
+
+          @if (project.technologies.length) {
+            <div class="project-card__tags">
+              @for (tech of project.technologies; track tech) {
+                <span class="tech-tag">{{ tech }}</span>
+              }
+            </div>
+          }
+
+          @if (project.link) {
+            <a class="btn btn-secondary project-modal__link" [href]="project.link" target="_blank" rel="noopener">
+              {{ project.link }}
+            </a>
+          }
+        </div>
+      </div>
+    </div>
+}

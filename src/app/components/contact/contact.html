@@ -1,0 +1,105 @@
+<section id="contact" class="section contact" appFadeInOnScroll>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">{{ 'contact.title' | translate }}</h2>
+      <p class="section-lead">{{ 'contact.subtitle' | translate }}</p>
+    </div>
+
+    <div class="contact__grid">
+      <a class="card contact__item" [href]="'mailto:' + contact.email">
+        <span class="contact__icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m4 7 8 6 8-6" />
+          </svg>
+        </span>
+        <span class="contact__body">
+          <span class="contact__label">{{ 'contact.email' | translate }}</span>
+          <span class="contact__value">{{ contact.email }}</span>
+        </span>
+      </a>
+
+      <a class="card contact__item" [href]="'tel:' + contact.phone">
+        <span class="contact__icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path
+              d="M6.6 3h3l1.4 4.4-2 1.6a12 12 0 0 0 5.4 5.4l1.6-2 4.4 1.4v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.6 5.2 2 2 0 0 1 6.6 3Z"
+            />
+          </svg>
+        </span>
+        <span class="contact__body">
+          <span class="contact__label">{{ 'contact.phone' | translate }}</span>
+          <span class="contact__value">{{ contact.phone }}</span>
+        </span>
+      </a>
+
+      <div class="card contact__item">
+        <span class="contact__icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z" />
+            <circle cx="12" cy="9.5" r="2.3" />
+          </svg>
+        </span>
+        <span class="contact__body">
+          <span class="contact__label">{{ 'contact.location' | translate }}</span>
+          <span class="contact__value">{{ contact.locationKey | translate }}</span>
+        </span>
+      </div>
+
+      <a class="card contact__item" [href]="'https://' + contact.website" target="_blank" rel="noopener">
+        <span class="contact__icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" />
+          </svg>
+        </span>
+        <span class="contact__body">
+          <span class="contact__label">{{ 'contact.website' | translate }}</span>
+          <span class="contact__value">{{ contact.website }}</span>
+        </span>
+      </a>
+
+      <a class="card contact__item" [href]="contact.githubPersonal" target="_blank" rel="noopener">
+        <span class="contact__icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path
+              d="M12 .5C5.65.5.5 5.66.5 12.02c0 5.09 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.09-.12-.3-.52-1.5.11-3.12 0 0 .97-.31 3.18 1.18a10.9 10.9 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.62.24 2.82.12 3.12.74.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.08.78 2.18 0 1.57-.02 2.84-.02 3.22 0 .31.21.67.8.56A10.53 10.53 0 0 0 23.5 12.02C23.5 5.66 18.35.5 12 .5Z"
+            />
+          </svg>
+        </span>
+        <span class="contact__body">
+          <span class="contact__label">{{ 'contact.githubPersonal' | translate }}</span>
+          <span class="contact__value">github.com/JeremyVandeputte</span>
+        </span>
+      </a>
+
+      <a class="card contact__item" [href]="contact.githubPro" target="_blank" rel="noopener">
+        <span class="contact__icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path
+              d="M12 .5C5.65.5.5 5.66.5 12.02c0 5.09 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.09-.12-.3-.52-1.5.11-3.12 0 0 .97-.31 3.18 1.18a10.9 10.9 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.62.24 2.82.12 3.12.74.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.08.78 2.18 0 1.57-.02 2.84-.02 3.22 0 .31.21.67.8.56A10.53 10.53 0 0 0 23.5 12.02C23.5 5.66 18.35.5 12 .5Z"
+            />
+          </svg>
+        </span>
+        <span class="contact__body">
+          <span class="contact__label">{{ 'contact.githubPro' | translate }}</span>
+          <span class="contact__value">github.com/jervandeputt</span>
+        </span>
+      </a>
+
+      <a class="card contact__item" [href]="contact.linkedin" target="_blank" rel="noopener">
+        <span class="contact__icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path
+              d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"
+            />
+          </svg>
+        </span>
+        <span class="contact__body">
+          <span class="contact__label">{{ 'contact.linkedin' | translate }}</span>
+          <span class="contact__value">LinkedIn</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>

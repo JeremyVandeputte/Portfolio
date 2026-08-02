@@ -1,0 +1,136 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "viewCv": "View CV",
+    "backToPortfolio": "Back to portfolio",
+    "toggleTheme": "Toggle theme",
+    "toggleLang": "Switch language",
+    "toggleMenu": "Open menu"
+  },
+  "intro": {
+    "greeting": "Hi, I'm",
+    "role": "Python Django Developer — Full-Stack",
+    "tagline": "I build robust web applications end to end, from the business model to the final interface — with a strong focus on reliability, clean code and user experience.",
+    "ctaProjects": "Discover my projects",
+    "ctaContact": "Get in touch",
+    "scrollHint": "Scroll to learn more"
+  },
+  "about": {
+    "title": "About this site",
+    "text1": "This site is my professional portfolio: it presents my background, skills and projects in a clear, structured way.",
+    "text2": "It can also be viewed at any time as a classic résumé, printable and downloadable in one click, via the toggle in the navigation bar.",
+    "text3": "The goal is simple: give a recruiter or a company a quick, reliable overview of my profile, without detours."
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitleProfessional": "Professional experience",
+    "subtitleEducation": "Education",
+    "present": "Present",
+    "uclouvain": {
+      "title": "Full-Stack Python Django Developer",
+      "description": "Development and maintenance of Django web applications (back-end and front-end). Built from scratch a student evaluation registration system (API and interfaces), evaluation organization, credit allocation for student registration, redesign of the student record interface, generation of 10 different PDFs (course plan composition, evaluation registration, deliberation minutes, etc.) and data migration scripts. Approach: Domain Driven Design."
+    },
+    "chwapi": {
+      "title": "Developer Intern",
+      "description": "Development of a new React Native application for patient monitoring, used by attending physicians."
+    }
+  },
+  "education": {
+    "englishA1A2": {
+      "title": "English A1-A2"
+    },
+    "ddd": {
+      "title": "Domain Driven Design"
+    },
+    "pythonDjango": {
+      "title": "Python Django Training"
+    },
+    "bachelorIt": {
+      "title": "Bachelor's Degree in IT Management",
+      "description": "Graduated with distinction."
+    },
+    "cessAgronomy": {
+      "title": "Secondary School Diploma + Agricultural Qualification",
+      "description": "Agronomy track."
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "categories": {
+      "languages": "Languages",
+      "frameworks": "Frameworks",
+      "databases": "Databases",
+      "frontend": "Front-end",
+      "tools": "Tools",
+      "concepts": "Concepts",
+      "methodologies": "Methodologies",
+      "os": "Operating systems",
+      "languagesSpoken": "Spoken languages"
+    },
+    "languagesSpoken": {
+      "french": "French (native language)",
+      "english": "English (B1 level)"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "statusOnline": "Live",
+    "statusInProgress": "In progress",
+    "technologiesLabel": "Technologies",
+    "learnMore": "Learn more",
+    "close": "Close",
+    "imagePlaceholder": "Image coming soon",
+    "prevImage": "Previous image",
+    "nextImage": "Next image",
+    "elia": {
+      "title": "Elia Imbalance Price",
+      "description": "Retrieval and visualization of the electrical grid imbalance price and its forecast via the Elia API.",
+      "detail": "Detailed description coming soon."
+    },
+    "portfolio": {
+      "title": "Portfolio & Résumé",
+      "description": "Showcase of my projects and downloadable résumé — the site you are currently viewing.",
+      "technique": "Technique: Vibe coding (Claude Code)",
+      "detail": "Detailed description coming soon."
+    },
+    "justgaming": {
+      "title": "JustGaming — Gaming social network",
+      "description": "Gaming-focused social network with a complete architecture (Domains, Repositories, Use cases), built in collaboration with 3 other developers. Jenkins integration: automated deployment, unit tests and quality analysis (Pylint) on every pull request.",
+      "detail": "Detailed description coming soon."
+    },
+    "fsm": {
+      "title": "Farm Management Tool (FSM)",
+      "description": "Farm management site for a farming simulation game.",
+      "detail": "Detailed description coming soon."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Feel free to reach out directly through any of the channels below.",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Celles, Belgium",
+    "website": "Personal website",
+    "githubPersonal": "Personal GitHub",
+    "githubPro": "Professional GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "cv": {
+    "title": "Résumé",
+    "subtitle": "View, download or print my résumé as a PDF.",
+    "download": "Download",
+    "print": "Print",
+    "viewMobile": "View / Download résumé",
+    "mobileNotice": "For better readability on mobile, open the résumé directly in full screen.",
+    "backToPortfolio": "Back to portfolio"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "madeWith": "Designed and built with Angular."
+  }
+}

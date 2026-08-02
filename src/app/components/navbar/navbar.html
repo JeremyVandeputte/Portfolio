@@ -1,0 +1,84 @@
+<header class="navbar">
+  <div class="container navbar__inner">
+    <a class="navbar__brand" [routerLink]="['/']" fragment="home" (click)="closeMobile()">
+      <img class="navbar__brand-photo" src="assets/images/profile/me.jpg" alt="" width="32" height="32" />
+      <span>Jérémy Vandeputte</span>
+    </a>
+
+    <button
+      type="button"
+      class="navbar__burger"
+      [class.is-open]="mobileOpen()"
+      (click)="toggleMobile()"
+      [attr.aria-expanded]="mobileOpen()"
+      aria-controls="navbar-menu"
+      [attr.aria-label]="'nav.toggleMenu' | translate"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="navbar__menu" id="navbar-menu" [class.navbar__menu--open]="mobileOpen()">
+      <ul class="navbar__links">
+        @for (item of navItems; track item.fragment) {
+          <li>
+            <a
+              [routerLink]="['/']"
+              [fragment]="item.fragment"
+              [class.is-active]="!isCvView() && activeFragment() === item.fragment"
+              (click)="closeMobile()"
+              >{{ item.labelKey | translate }}</a
+            >
+          </li>
+        }
+      </ul>
+
+      <div class="navbar__actions">
+        <a
+          class="btn btn-secondary navbar__cv-btn"
+          [routerLink]="isCvView() ? ['/'] : ['/cv']"
+          (click)="closeMobile()"
+        >
+          {{ (isCvView() ? 'nav.backToPortfolio' : 'nav.viewCv') | translate }}
+        </a>
+
+        <div class="navbar__lang" role="group" [attr.aria-label]="'nav.toggleLang' | translate">
+          @for (code of languages; track code) {
+            <button
+              type="button"
+              class="navbar__lang-btn"
+              [class.is-active]="lang.currentLang() === code"
+              (click)="lang.switchLang(code)"
+            >
+              {{ code.toUpperCase() }}
+            </button>
+          }
+        </div>
+
+        <button
+          type="button"
+          class="navbar__theme-btn"
+          (click)="theme.toggle()"
+          [attr.aria-label]="'nav.toggleTheme' | translate"
+        >
+          @if (theme.theme() === 'dark') {
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="18" height="18">
+              <circle cx="12" cy="12" r="4.2" />
+              <path
+                stroke-linecap="round"
+                d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"
+              />
+            </svg>
+          } @else {
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+              <path
+                d="M20.7 14.9A8.5 8.5 0 1 1 9.1 3.3a7 7 0 0 0 11.6 11.6Z"
+              />
+            </svg>
+          }
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
