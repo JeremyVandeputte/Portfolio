@@ -26,7 +26,7 @@ export const PROJECTS: Project[] = [
     titleKey: 'projects.elia.title',
     descriptionKey: 'projects.elia.description',
     detailDescriptionKey: 'projects.elia.detail',
-    technologies: ['Python', 'Django', 'Plotly', 'PostgreSQL', 'cron', 'tenacity'],
+    technologies: ['Python', 'Django', 'Plotly', 'SQLite', 'cron', 'tenacity'],
     status: 'online',
     images: ['assets/images/projects/elia-imbalance-price/global_page_1.png', 'assets/images/projects/elia-imbalance-price/global_page_2.png'],
   },
@@ -39,7 +39,7 @@ export const PROJECTS: Project[] = [
     status: 'online',
     techniqueKey: 'projects.portfolio.technique',
     link: 'https://www.jeremyvandeputte.be',
-    images: [],
+    images: ['assets/images/projects/portfolio/home.png'],
   },
   {
     id: 'justgaming',

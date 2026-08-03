@@ -74,7 +74,7 @@
     },
     "languagesSpoken": {
       "french": "French (native language)",
-      "english": "English (B1 level)"
+      "english": "English (A2 level)"
     }
   },
   "projects": {
@@ -105,7 +105,7 @@
     },
     "fsm": {
       "title": "Farm Management Tool (FSM)",
-      "description": "Farm management site for a farming simulation game.",
+      "description": "Farm management site for a simulation game.",
       "detail": "Detailed description coming soon."
     }
   },
