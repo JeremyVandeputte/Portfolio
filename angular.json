@@ -35,7 +35,12 @@
             "server": "src/main.server.ts",
             "outputMode": "server",
             "security": {
-              "allowedHosts": []
+              "allowedHosts": [
+                "jeremyvandeputte.be",
+                "www.jeremyvandeputte.be",
+                "127.0.0.1",
+                "localhost"
+              ]
             },
             "ssr": {
               "entry": "src/server.ts"
