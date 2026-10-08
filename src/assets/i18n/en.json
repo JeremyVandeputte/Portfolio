@@ -33,7 +33,7 @@
     "present": "Present",
     "uclouvain": {
       "title": "Full-Stack Python Django Developer",
-      "description": "Development and maintenance of Django web applications (back-end and front-end). Built from scratch a student evaluation registration system (API and interfaces), evaluation organization, credit allocation for student registration, redesign of the student record interface, generation of 10 different PDFs (course plan composition, evaluation registration, deliberation minutes, etc.) and data migration scripts. Approach: Domain Driven Design."
+      "description": "Development and maintenance of Django web applications (backend and frontend). Built from scratch a student evaluation registration system (API and interfaces), evaluation organization, credit allocation for student registration, redesign of the student record interface, generation of 10 different PDFs (course plan composition, evaluation registration, deliberation minutes, etc.) and data migration scripts. Approach: Domain Driven Design."
     },
     "chwapi": {
       "title": "Developer Intern",
@@ -65,7 +65,7 @@
       "languages": "Languages",
       "frameworks": "Frameworks",
       "databases": "Databases",
-      "frontend": "Front-end",
+      "frontend": "Frontend",
       "tools": "Tools",
       "concepts": "Concepts",
       "methodologies": "Methodologies",

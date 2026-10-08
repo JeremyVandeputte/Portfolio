@@ -33,11 +33,11 @@
     "present": "Aujourd'hui",
     "uclouvain": {
       "title": "Développeur Python Django Full-Stack",
-      "description": "Développement et maintenance d'applications web Django (back-end et front-end). Développement de A à Z d'un système d'inscription aux évaluations étudiantes (API et interfaces), organisation des évaluations, octroi de crédits pour l'inscription d'un étudiant, refonte de l'interface du dossier étudiant, génération de 10 PDFs différents (composition du PAE, inscription aux évaluations, PV de délibération, etc.) et scripts de reprise de données. Approche : Domain Driven Design."
+      "description": "Développement et maintenance d'applications web Django (backend et frontend). Développement de A à Z d'un système d'inscription aux évaluations étudiantes (API et interfaces), organisation des évaluations, octroi de crédits pour l'inscription d'un étudiant, refonte de l'interface du dossier étudiant, génération de 10 PDFs différents (composition du PAE, inscription aux évaluations, PV de délibération, etc.) et scripts de reprise de données. Approche : Domain Driven Design."
     },
     "chwapi": {
       "title": "Stagiaire Développeur",
-      "description": "Développement d'une nouvelle application React Native de suivi des patients pour les médecins traitants."
+      "description": "Développement d'une application de suivi des patients pour les médecins traitants (frontend : React Native – backend & API : C# .NET)"
     }
   },
   "education": {
@@ -65,7 +65,7 @@
       "languages": "Langages",
       "frameworks": "Frameworks",
       "databases": "Bases de données",
-      "frontend": "Front-end",
+      "frontend": "Frontend",
       "tools": "Outils",
       "concepts": "Concepts",
       "methodologies": "Méthodologies",
